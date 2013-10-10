@@ -47,3 +47,5 @@ end
 gem 'carrierwave'
 
 gem 'nested_form'
+
+gem 'simple_enum'

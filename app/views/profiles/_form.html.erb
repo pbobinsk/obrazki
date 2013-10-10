@@ -1,0 +1,38 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :cats %><br>
+    <p>
+      <% Profile.genders.each do |g| %>
+       <%= g[0] %>
+      <% end %>
+
+    </p>
+<!--    <%= f.text_area :cats %> -->
+    <%= f.check_box :cats, {:multiple => true, checked: (@profile.cats.include?("1"))}, 1,nil %>
+    <%= f.check_box :cats, {:multiple => true, checked: (@profile.cats.include?("2"))}, 2,nil %>
+    <%= f.check_box :cats, {:multiple => true, checked: (@profile.cats.include?("3"))}, 3, nil %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
