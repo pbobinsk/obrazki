@@ -27,10 +27,7 @@
       <% end %>
 
     </p>
-<!--    <%= f.text_area :cats %> -->
-    <%= f.check_box :cats, {:multiple => true, checked: (@profile.cats.include?("1"))}, 1,nil %>
-    <%= f.check_box :cats, {:multiple => true, checked: (@profile.cats.include?("2"))}, 2,nil %>
-    <%= f.check_box :cats, {:multiple => true, checked: (@profile.cats.include?("3"))}, 3, nil %>
+    <%= f.text_area :cats %>
   </div>
   <div class="actions">
     <%= f.submit %>
