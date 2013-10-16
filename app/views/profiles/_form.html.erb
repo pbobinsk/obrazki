@@ -29,6 +29,15 @@
     </p>
     <%= f.text_area :cats %>
   </div>
+
+
+    <div class="field">
+      <%= f.label :cups %><br>
+      <%= f.select :mycups, Cup.cups, {}, multiple: true %>
+    </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
