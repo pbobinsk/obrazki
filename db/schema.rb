@@ -38,11 +38,4 @@ ActiveRecord::Schema.define(version: 20131010164012) do
     t.integer  "gender_cd"
   end
 
-  create_table "profils", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
